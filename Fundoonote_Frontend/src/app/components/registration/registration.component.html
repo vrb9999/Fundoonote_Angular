@@ -1,0 +1,62 @@
+<body>
+    <header>
+        <div class="container">
+            <div class="left">
+                <h2 class="h2">
+                    <span style="color: blue">F</span>
+                    <span style="color: red">U</span>
+                    <span style="color: orange">N</span>
+                    <span style="color: blue">D</span>
+                    <span style="color: green">O</span>
+                    <span style="color: red">O</span>
+                </h2>
+                <h3>Create your Fundoo Account</h3>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="name">
+                        <mat-form-field appearance="outline">
+                            <mat-label>First name</mat-label>
+                            <input matInput formControlName="firstName" />
+                            <mat-error>Enter First name</mat-error>
+                        </mat-form-field>&nbsp;&nbsp;
+                        <mat-form-field appearance="outline">
+                            <mat-label>Last name</mat-label>
+                            <input matInput formControlName="lastName" />
+                            <mat-error>Enter Last name</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="email">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput matInput formControlName="email" placeholder="abc@gmail.com">
+                            <mat-hint>You can use letters, numbers</mat-hint>
+                            <mat-error>Enter an email</mat-error>
+                          </mat-form-field>
+                    </div>
+                    <div class="password">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input id="pwd" type="password" matInput formControlName="password" />
+                            <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
+                            <mat-error>Enter password</mat-error>
+                        </mat-form-field>&nbsp;&nbsp;
+                        <mat-form-field appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input id="cpwd" type="password" matInput formControlName="confirmPassword" />
+                            <mat-error>Enter confirm password</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="button">
+                        <mat-checkbox color="primary">Show Password</mat-checkbox>
+                    </div><br><br>
+                    <div class="buttons">            
+                        <button mat-button color="primary" routerLink="/login">Sign in instead</button>            
+                        <button mat-raised-button color="primary" style="width: 100px;">Next</button>            
+                    </div><br>
+                </form>
+            </div>
+            <div class="right">
+                <img src="/assets/signup.png" />
+            </div>
+        </div>
+    </header>
+</body>

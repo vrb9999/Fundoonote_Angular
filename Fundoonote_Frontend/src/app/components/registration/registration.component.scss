@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+
+header{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    border: 1px solid rgb(215, 212, 212);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.h2{
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.left{
+    flex-basis: 50%;
+}
+
+.right{
+    flex-basis: 50%;
+}
+
+.right img{
+    width: 270px;
+    margin-top: 75px;
+    margin-left: 15px;
+}
+
+.name{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin-bottom: 0px;
+}
+
+.email mat-form-field{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.password{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

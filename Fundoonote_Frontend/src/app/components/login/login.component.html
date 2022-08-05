@@ -1,0 +1,40 @@
+<body>
+    <div class="container">
+        <div class="heading">
+            <h2 class="h2">
+                <span style="color: blue;">F</span>
+                <span style="color: red;">U</span>
+                <span style="color: orange;">N</span>
+                <span style="color: blue;">D</span>
+                <span style="color: green;">O</span>
+                <span style="color: red;">O</span>
+            </h2>
+            <h2>Sign in</h2>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+            <div class="email">
+                <label>Sign in to your Fundoo account</label>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="abc@gmail.com"/>
+                  <mat-error>Enter an Email</mat-error> 
+                </mat-form-field><br>            
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" />
+                  <mat-error>Enter password</mat-error>                  
+                </mat-form-field>                
+            </div>
+            <div class="button">
+                <mat-checkbox color="primary">Show Password</mat-checkbox>
+                <button mat-button color="primary" routerLink="/resetpassword">Forgot password?</button> 
+            </div>
+            <br><br><br><br>
+            <div class="buttons">            
+                <button mat-button color="primary" routerLink="/register">Create Account</button>            
+                <button mat-raised-button color="primary" style="width: 100px;">Login</button>            
+            </div>
+        </form>
+    </div>
+</body>
