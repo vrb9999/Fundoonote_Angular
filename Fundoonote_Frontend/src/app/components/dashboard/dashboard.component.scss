@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+.logoimage{
+    margin-left:20px;
+    padding-top: 8px;
+}
+.logoimg{
+    margin-top: 5px;
+
+}
+.navbar{
+    background-color:transparent;
+    border-width: thin;
+     border: 1px solid #e3dede;
+}
+.company{
+    margin-left: 7px;
+    margin-right: 80px;
+    color: rgb(95, 99, 104);
+    font-family: 'Fredoka', sans-serif;
+}
+input{
+    border: 0px;
+}
+.searchbody{
+    background-color:rgb(241, 243, 244);
+    border-radius: 6px;
+    width:310%;
+}
+
+.inputtxt{
+    background-color:rgb(241, 243, 244);
+    width:86%;
+    height: 40px;
+    font-size: medium;
+    outline: none;
+    
+}
+.searchbody:active{
+    background-color: white;
+}
+.inputtxt:active{
+    background-color: white;
+}
+
+.searchbody:hover{
+    background-color: white;
+    border-width: thin;
+    border:1px solid rgb(241, 243, 244);
+    
+}
+.inputtxt:hover{
+    background-color: white;
+}
+
+.lastitems{
+    display: flex;
+    flex-direction: row;
+    margin-left: 49%;
+}
+.account{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3.5%;
+}
+// ==================================== Side Nav ====================================
+.menu-items{
+    list-style: none;
+    line-height: 40px;
+    padding-left: 0px;
+    
+}
+.menu-items ul{
+    display: flex;
+    justify-content: center
+    align-item  ;
+}
+
+
+.menu-items li{
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 25px;
+    padding-top: 8px;
+    border-radius: 10px 40px 40px 10px;
+
+    cursor: pointer;
+}
+
+.menu-items li:hover{
+    background-color: rgb(241, 243, 244);
+}
+
+.onActive{
+    background-color: rgb(254, 239, 195);
+}
+
+.sideicon{
+    margin-right: 23px;
+    padding-top: 2px;
+}
+.selcetIcon{
+    padding-top: 0;
+}
+  

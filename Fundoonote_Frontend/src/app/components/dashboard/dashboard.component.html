@@ -1,0 +1,95 @@
+<div class="container">
+    <mat-toolbar class="navbar">
+        <!-- <button mat-icon-button>
+            <mat-icon >menu</mat-icon>
+        </button> -->
+        <button mat-icon-button class="example-icon" (click)="sidenav.toggle();">
+            <img src="/assets/dashboard/menu.svg" alt="menu icon" width="25px">
+        </button>
+        <span class="logoimage">
+            <span class="logoimg">
+                <img src="/assets/keep_logo.png" alt="logo" width="38px">
+            </span>
+        </span>
+        <span class="company">FUNDOO</span>
+
+        <div>
+            <form>
+                <div class="searchbody">
+                    <button mat-icon-button class="example-icon">
+                        <img src="/assets/dashboard/search.svg" alt="search icon" width="25px">
+                    </button>
+                   
+                        <input class="inputtxt" autocomplete="off" placeholder="Search" type="text" id="name">
+                    <span>
+                    <button mat-icon-button class="example-icon">
+                        <img class="cancle-bttn" src="/assets/dashboard/close.svg"alt="cancle icon" width="20px">
+                    </button> 
+                    </span>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="lastitems">
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="/assets/dashboard/refresh.svg" alt="menu icon" width="25px">
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="/assets/dashboard/view.svg" alt="menu icon" width="25px">
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="/assets/dashboard/settings.svg" alt="menu icon" width="25px">
+                </button>
+            </div>
+        </div>
+
+        <div class="account">
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="/assets/dashboard/apps.svg" alt="menu icon" width="25px">
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="example-icon">
+                    <img src="/assets/dashboard/account.svg" alt="menu icon" width="25px">
+                </button>
+            </div>
+
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="side" style="width:16% ;">
+            <mat-nav-list class="selcetIcon">
+                <ul class="menu-items product">
+                    <li (click)="goTo('Notes')" [ngClass]="{'onActive':selectedMenu == 'Notes'}"><img class="sideicon"
+                            src="/assets/dashboard/bulb.svg" alt="note icon" width="18px"><span
+                            class="text-data">Notes</span></li>
+                    <li (click)="goTo('Remainders')" [ngClass]="{'onActive':selectedMenu == 'Remainders'}"><img
+                            class="sideicon" src="/assets/dashboard/reminder.svg" alt="reminder icon" width="20px"><span
+                            class="text-data">Remainders</span></li>
+                    <li (click)="goTo('Edit')" [ngClass]="{'onActive':selectedMenu == 'Edit'}"><img class="sideicon"
+                            src="/assets/dashboard/edit.svg" alt="edit icon" width="20px"><span
+                            class="text-data">Edit</span></li>
+                    <li (click)="goTo('Archive')" [ngClass]="{'onActive':selectedMenu == 'Archive'}"><img
+                            class="sideicon" src="/assets/dashboard/archive.svg" alt="archive icon" width="20px"><span
+                            class="text-data">Archive</span></li>
+                    <li (click)="goTo('Trash')" [ngClass]="{'onActive':selectedMenu == 'Trash'}"><img class="sideicon"
+                            src="/assets/dashboard/trash.svg" alt="trash icon" width="20px"><span
+                            class="text-data">Trash</span></li>
+                </ul>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div style="height: 90vh;">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>

@@ -31,7 +31,15 @@ export class UserService {
       })
     }
     return this.httpService.postService('/User/LoginUser',reqdata,false,header)
-
    }
 
+  forgotpassword(reqdata: any) {
+    console.log(reqdata);
+    let header = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json'
+      })
+    }
+    return this.httpService.postService(`/User/ForgetPasswordUser/${reqdata.Email}`, reqdata, false, header)
+  }
 }
