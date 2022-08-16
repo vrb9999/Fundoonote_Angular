@@ -27,4 +27,36 @@ export class NoteService {
 
     return this.httpService.postService('/Note/AddNote',reqdata,true,header)
   }
+
+  getAllNotesService(){
+
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "Bearer "+this.token
+      })
+    }
+    return this.httpService.getService('/Note/GetAllNote', true, headers);
+  }
+
+  getArchiveNotes() {
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + this.token
+      })
+    }
+    return this.httpService.getService('/Note/GetAllArchiveNote', true, header);
+  }
+
+  getTrashNotes(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + this.token
+      })
+    }
+    return this.httpService.getService('/Note/GetAllTrashNote', true, header);
+  }
 }

@@ -1,57 +1,30 @@
 <div class="note">
-    <form [formGroup]="createNoteForm" (ngSubmit)="onSubmit()">
-
-            <div class="create-note-header" *ngIf="notecard">
-                    <input class="create-note" id="btn1" type="text" placeholder="Title" formControlName="title" autocomplete="off" />
-                    <button mat-icon-button class="profile-icon" matTooltip="Pin">
-                            <img src="/assets/create_note/pin.svg" />
-                    </button>
-            </div>
-            <div class="create-note-body">
-                    <textarea class="create-note" id="btn2" type="text" (click)="openNoteCard()" formControlName="description"
-                            placeholder="Take a note..." autocomplete="off" ></textarea>
-            </div>
-            <div class="create-note-footer" *ngIf="notecard">
-                    <div class="create-note-btn">
-                            <button mat-icon-button matTooltip="Reminde me">
-                                    <img src="/assets/create_note/remind.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="Collaborator" class="header-icon">
-                                    <img src="/assets/create_note/person.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="Background options" class="bg-color" [matMenuTriggerFor]="vertebrates">
-                                    <img src="/assets/create_note/color.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="Add image">
-                                    <img src="/assets/create_note/image.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="Archive">
-                                    <img src="/assets/create_note/archive.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="More">
-                                    <img src="/assets/create_note/more.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="Undo">
-                                    <img src="/assets/create_note/undo.svg" />
-                            </button>
-                            <button mat-icon-button matTooltip="Redo">
-                                    <img src="/assets/create_note/redo.svg" />
-                            </button>
-                    </div>
-                    <button mat-button matTooltip="Close" (click)="closecard()" (click)="onSubmit()" class="close-card">Close</button>
-            </div>
-            <mat-menu #vertebrates="matMenu" onselect="onColorseclect()">
-                    <button mat-menu-item >Red</button>
-                    <button mat-menu-item >Green</button>
-                    <button mat-menu-item >Blue</button>
-            </mat-menu>            
-    </form>
+        <form [formGroup]="createNoteForm" (ngSubmit)="onSubmit()">
+                <div class="create-note-header" *ngIf="notecard">
+                        <input class="create-note" id="btn1" type="text" placeholder="Title" formControlName="title"
+                                autocomplete="off" />
+                        <button mat-icon-button class="profile-icon" matTooltip="Pin">
+                                <img src="/assets/create_note/pin.svg" />
+                        </button>
+                </div>
+                <div class="create-note-body">
+                        <textarea class="create-note" id="btn2" type="text" (click)="openNoteCard()"
+                                formControlName="description" placeholder="Take a note..."
+                                autocomplete="off"></textarea>
+                </div>
+                <div class="create-note-footer" *ngIf="notecard">
+                        <div class="icons">
+                                <app-icons></app-icons>
+                                <!-- <button mat-icon-button matTooltip="Undo">
+                                        <img src="/assets/create_note/undo.svg" />
+                                </button>
+                                <button mat-icon-button matTooltip="Redo">
+                                        <img src="/assets/create_note/redo.svg" />
+                                </button> -->
+                        </div>
+                        <button mat-button matTooltip="Close" (click)="closecard()" (click)="onSubmit()" class="close">
+                                Close
+                        </button>
+                </div>
+        </form>
 </div>
-
-<script>
-    const Textarea =document.querySelector("textarea");
-    Textarea.addEventListener("keyup",e => {
-            let scHeight=e.target.document.documentElement.scrollTop;
-            console.log(scHeight)
-    });
-</script>

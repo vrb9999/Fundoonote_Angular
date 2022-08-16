@@ -35,22 +35,24 @@
 .create-note-footer{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     position: relative;
     padding-bottom: 5px;
 }
 
-.create-note-btn{
-    margin-left: 4px;
-    width: 100%;
-    column-gap: 70%;
-}
 
-.create-note-btn img{ 
+.create-note-foote img{ 
   width: 17px;
 }
 
-.create-note-btn button{
+.create-note-foote button{
     margin-right: 10px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    position: relative;
 }
 
 #btn1{
@@ -66,4 +68,8 @@ textarea{
 
 textarea::-webkit-scrollbar{
     width: 0px;
+}
+
+.close{
+    margin-right: 5px;
 }

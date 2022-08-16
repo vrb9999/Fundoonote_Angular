@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteService } from 'src/app/services/notes/note.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-notes',
@@ -13,13 +14,13 @@ export class CreateNotesComponent implements OnInit {
   notecard: boolean=false;
   color!:string;
   
-  constructor(private formBuilder: FormBuilder, private note: NoteService) { }
+  constructor(private formBuilder: FormBuilder, private note: NoteService, private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.createNoteForm = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      bgcolor: 'Yellow',
+      bgcolor: 'Red',
   });
   }
 
@@ -41,11 +42,12 @@ export class CreateNotesComponent implements OnInit {
        }
 
        this.note.createNote(reqdata).subscribe((response:any)=>{
-         console.log(response)
-       }, (error: any) => {
-         console.log(error);
+         console.log(response);        
        })
-      this.onReset();
+
+       this.snackbar.open("Note created Successfully","",{
+        duration:2000,
+      });
    }
 
    onReset() {

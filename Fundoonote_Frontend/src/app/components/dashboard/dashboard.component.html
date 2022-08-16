@@ -1,17 +1,14 @@
 <div class="container">
     <mat-toolbar class="navbar">
-        <!-- <button mat-icon-button>
-            <mat-icon >menu</mat-icon>
-        </button> -->
         <button mat-icon-button class="example-icon" (click)="sidenav.toggle();">
             <img src="/assets/dashboard/menu.svg" alt="menu icon" width="25px">
         </button>
         <span class="logoimage">
-            <span class="logoimg">
+            <span routerLink="/dashboard/notes" class="logoimg">
                 <img src="/assets/keep_logo.png" alt="logo" width="38px">
             </span>
         </span>
-        <span class="company">FUNDOO</span>
+        <span routerLink="/dashboard/notes" class="company">FUNDOO</span>
 
         <div>
             <form>
@@ -67,7 +64,7 @@
         <mat-sidenav #sidenav mode="side" style="width:16% ;">
             <mat-nav-list class="selcetIcon">
                 <ul class="menu-items product">
-                    <li (click)="goTo('Notes')" [ngClass]="{'onActive':selectedMenu == 'Notes'}"><img class="sideicon"
+                    <li (click)="goTo('Notes')" (click)="notes()" [ngClass]="{'onActive':selectedMenu == 'Notes'}"><img class="sideicon"
                             src="/assets/dashboard/bulb.svg" alt="note icon" width="18px"><span
                             class="text-data">Notes</span></li>
                     <li (click)="goTo('Remainders')" [ngClass]="{'onActive':selectedMenu == 'Remainders'}"><img
@@ -76,10 +73,10 @@
                     <li (click)="goTo('Edit')" [ngClass]="{'onActive':selectedMenu == 'Edit'}"><img class="sideicon"
                             src="/assets/dashboard/edit.svg" alt="edit icon" width="20px"><span
                             class="text-data">Edit</span></li>
-                    <li (click)="goTo('Archive')" [ngClass]="{'onActive':selectedMenu == 'Archive'}"><img
+                    <li (click)="goTo('Archive')" (click)="archive()" [ngClass]="{'onActive':selectedMenu == 'Archive'}"><img
                             class="sideicon" src="/assets/dashboard/archive.svg" alt="archive icon" width="20px"><span
                             class="text-data">Archive</span></li>
-                    <li (click)="goTo('Trash')" [ngClass]="{'onActive':selectedMenu == 'Trash'}"><img class="sideicon"
+                    <li (click)="goTo('Trash')" (click)="trash()" [ngClass]="{'onActive':selectedMenu == 'Trash'}"><img class="sideicon"
                             src="/assets/dashboard/trash.svg" alt="trash icon" width="20px"><span
                             class="text-data">Trash</span></li>
                 </ul>

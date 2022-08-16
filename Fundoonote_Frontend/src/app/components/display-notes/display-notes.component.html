@@ -1,1 +1,29 @@
+<div class="displayNote">
+    <div *ngFor="let note of NotesList">
+        <mat-card class="example-card">
+            <mat-card-title  (click)="openDialog()"  mat-dialog-title>
+                {{note.title }}
+            </mat-card-title>
 
+            <mat-card-content  (click)="openDialog()"  mat-dialog-content>
+                {{ note.description }}
+            </mat-card-content>
+
+            <!-- <div class="create-note-footer">
+                <div class="create-note-btn">
+                        <button mat-icon-button matTooltip="Undo">
+                                <img src="/assets/create_note/undo.svg" *ngIf="notecard" />
+                        </button>
+                        <button mat-icon-button matTooltip="Redo">
+                                <img src="/assets/create_note/redo.svg" *ngIf="notecard"/>
+                        </button>
+                </div>
+        </div> -->
+        <mat-card-actions>
+            <div class="icons">
+                <app-icons></app-icons>
+            </div>
+        </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

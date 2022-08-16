@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef,OnDestroy} from '@angular/core';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,28 +7,9 @@ import {ChangeDetectorRef,OnDestroy} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  // mobileQuery: MediaQueryList;
-
-  // fillerNav = Array.from({length: 5}, (i) => 'Notes',
-  // ()=>'Reminder');
-
-  // fillerContent = Array.from(
-  //   {length: 50}
-  // );
-
-  // private _mobileQueryListener: () => void;
-
-  // constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-  //   this.mobileQuery = media.matchMedia('(max-width: 600px)');
-  //   this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-  //   this.mobileQuery.addListener(this._mobileQueryListener);
-  // }
-
-  // ngOnDestroy(): void {
-  //   this.mobileQuery.removeListener(this._mobileQueryListener);
-  // }
-  selectedMenu:any='Home';
-  constructor() { }
+  selectedMenu:any='dashboard';
+  isArchive: boolean=false;
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -38,4 +18,15 @@ export class DashboardComponent implements OnInit {
     this.selectedMenu = paramText;
   }
 
+  notes(){
+    this.route.navigateByUrl('dashboard/notes');
+  }
+
+  trash() {
+    this.route.navigateByUrl('dashboard/trash')
+  }
+
+  archive(){
+    this.route.navigateByUrl('dashboard/archive')
+  }
 }
